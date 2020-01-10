@@ -6,7 +6,7 @@ export default {
   UserName: {
     props: {
       size: 'large',
-      id: 'userName',
+      id: 'username',
       prefix: <Icon type="user" className={styles.prefixIcon} />,
       placeholder: 'admin',
     },
@@ -14,6 +14,24 @@ export default {
       {
         required: true,
         message: 'Please enter username!',
+      },
+    ],
+  },
+  Email: {
+    props: {
+      size: 'large',
+      id: 'email',
+      prefix: <Icon type="user" className={styles.prefixIcon} />,
+      placeholder: 'admin',
+    },
+    rules: [
+      {
+        required: true,
+        message: 'Please enter email!',
+      },
+      {
+        pattern: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/,
+        message: '请输入正确的邮箱地址!',
       },
     ],
   },

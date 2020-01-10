@@ -1,16 +1,14 @@
 import { IConfig, IPlugin } from 'umi-types';
 import defaultSettings from './defaultSettings'; // https://umijs.org/config/
+const proxyConfig = require('./proxy.config');
+
 import slash from 'slash2';
 import themePluginConfig from './themePluginConfig';
-import { Hash } from 'crypto';
-
-const { pwa } = defaultSettings;
-
-// preview.pro.ant.design only do not use in your production ;
+const { pwa } = defaultSettings; // preview.pro.ant.design only do not use in your production ;
 // preview.pro.ant.design 专用环境变量，请不要在你的项目中使用它。
+
 const { ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION } = process.env;
 const isAntDesignProPreview = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site';
-
 const plugins: IPlugin[] = [
   [
     'umi-plugin-react',
@@ -19,16 +17,9 @@ const plugins: IPlugin[] = [
       dva: {
         hmr: true,
       },
-      locale: {
-        // default false
-        enable: true,
-        // default zh-CN
-        default: 'zh-CN',
-        // default true, when it is true, will use `navigator.language` overwrite default
-        baseNavigator: true,
-      },
+      locale: false,
       dynamicImport: {
-        loadingComponent: './components/PageLoading/index',
+        loadingComponent: '.\u002Fcomponents\u002FPageLoading\u002Findex',
         webpackChunkName: true,
         level: 3,
       },
@@ -126,7 +117,6 @@ export default {
         },
       ],
     },
-
     {
       component: './404',
     },
@@ -177,13 +167,6 @@ export default {
   },
   manifest: {
     basePath: '/',
-  },
-  // chainWebpack: webpackPlugin,
-  // proxy: {
-  //   '/server/api/': {
-  //     target: 'https://preview.pro.ant.design/',
-  //     changeOrigin: true,
-  //     pathRewrite: { '^/server': '' },
-  //   },
-  // },
+  }, // chainWebpack: webpackPlugin,
+  proxy: proxyConfig,
 } as IConfig;

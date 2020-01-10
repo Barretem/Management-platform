@@ -3,15 +3,14 @@ import { Helmet } from 'react-helmet';
 import Link from 'umi/link';
 import React from 'react';
 import { connect } from 'dva';
-import { formatMessage } from 'umi-plugin-react/locale';
-
-import SelectLang from '@/components/SelectLang';
 import { ConnectProps, ConnectState } from '@/models/connect';
 import logo from '../assets/logo.svg';
 import styles from './UserLayout.less';
 
 export interface UserLayoutProps extends ConnectProps {
-  breadcrumbNameMap: { [path: string]: MenuDataItem };
+  breadcrumbNameMap: {
+    [path: string]: MenuDataItem;
+  };
 }
 
 const UserLayout: React.FC<UserLayoutProps> = props => {
@@ -31,20 +30,17 @@ const UserLayout: React.FC<UserLayoutProps> = props => {
   const title = getPageTitle({
     pathname: location.pathname,
     breadcrumb,
-    formatMessage,
     ...props,
   });
   return (
-    <>
+    <div>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={title} />
       </Helmet>
 
       <div className={styles.container}>
-        <div className={styles.lang}>
-          <SelectLang />
-        </div>
+        <div className={styles.lang}></div>
         <div className={styles.content}>
           <div className={styles.top}>
             <div className={styles.header}>
@@ -59,10 +55,8 @@ const UserLayout: React.FC<UserLayoutProps> = props => {
         </div>
         <DefaultFooter />
       </div>
-    </>
+    </div>
   );
 };
 
-export default connect(({ settings }: ConnectState) => ({
-  ...settings,
-}))(UserLayout);
+export default connect(({ settings }: ConnectState) => ({ ...settings }))(UserLayout);

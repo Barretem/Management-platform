@@ -1,9 +1,15 @@
 {
-  "originUrl": "http://112.74.201.109/apiDoc-json",
-  "outDir": "./service",
+  "outDir": "./src/api",
   "templatePath": "./templates/index",
   "prettierConfig": {
     "singleQuote": true,
     "requirePragma": true
-  }
+  },
+  "origins": [
+    {
+      "originUrl": "http://localhost:3333/apiDoc-json",
+      "name": "kangaroo",
+      "usingMultipleOrigins": true
+    }
+  ]
 }

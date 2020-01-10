@@ -1,6 +1,74 @@
 [
   {
-    "mods": [],
+    "mods": [
+      {
+        "description": "",
+        "interfaces": [
+          {
+            "consumes": ["application/json"],
+            "description": "根据用户邮箱登录",
+            "name": "loginByEmail",
+            "method": "post",
+            "path": "/auth/loginByEmail",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": []
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "name": "LoginByEmailDto",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "LoginByEmailDto",
+                  "isDefsType": true,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": []
+                }
+              }
+            ]
+          },
+          {
+            "consumes": ["application/json"],
+            "description": "根据用户名密码登录",
+            "name": "loginByUsername",
+            "method": "post",
+            "path": "/auth/loginByUsername",
+            "response": {
+              "typeArgs": [],
+              "typeName": "ResUser",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": []
+            },
+            "parameters": [
+              {
+                "in": "body",
+                "name": "LoginByUsernameDto",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "LoginByUsernameDto",
+                  "isDefsType": true,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": []
+                }
+              }
+            ]
+          }
+        ],
+        "name": "auth"
+      }
+    ],
+    "name": "kangaroo",
     "baseClasses": [
       {
         "name": "ChangeKnowledgeDto",
@@ -191,11 +259,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                "'root'",
-                "'admin'",
-                "'guest'"
-              ]
+              "enum": ["'root'", "'admin'", "'guest'"]
             },
             "name": "role",
             "required": true
@@ -383,12 +447,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 成功；1: 失败",
@@ -433,12 +492,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 成功 1: 失败",
@@ -1050,12 +1104,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1108,12 +1157,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1166,12 +1210,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1215,12 +1254,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1273,12 +1307,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1331,12 +1360,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1389,12 +1413,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1438,12 +1457,7 @@
               "isDefsType": false,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
-              "enum": [
-                0,
-                1,
-                0,
-                1
-              ]
+              "enum": [0, 1, 0, 1]
             },
             "name": "code",
             "description": "返回码，0: 失败；1: 成功",
@@ -1557,7 +1571,6 @@
         ],
         "templateArgs": []
       }
-    ],
-    "name": ""
+    ]
   }
 ]
